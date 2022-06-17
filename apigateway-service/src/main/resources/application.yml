@@ -21,7 +21,8 @@ spring:
             postLogger: true
       routes:
         - id: first-service
-          uri: http://localhost:8081/
+          uri: lb://MY-FIRST-SERVICE
+#          uri: http://localhost:8081/ # api-gateway 에서 바로 mapping, eureka server 에 client 요청 정보 전달
           predicates:
             - Path=/first-service/**
           filters:
@@ -29,7 +30,8 @@ spring:
 #            - AddResponseHeader=first-response, first-response-header2
             - CustomFilter
         - id: second-service
-          uri: http://localhost:8082/ # http://localhost:8082/second-service/**
+          uri: lb://MY-SECOND-SERVICE
+#          uri: http://localhost:8082/ # http://localhost:8082/second-service/**
           predicates:
             - Path=/second-service/**
           filters:
