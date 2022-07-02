@@ -72,8 +72,8 @@ public class UserServiceImpl implements UserService {
         String orderUrl = String.format(env.getProperty("order_service.url"), userId);
         ResponseEntity<List<ResponseOrder>> orderListResponse =
                 restTemplate.exchange(orderUrl, HttpMethod.GET, null,
-                                        new ParameterizedTypeReference<List<ResponseOrder>>() {
-                });
+                        new ParameterizedTypeReference<>() {
+                        });
         List<ResponseOrder> orderList = orderListResponse.getBody();
 
         userDto.setOrders(orderList);
