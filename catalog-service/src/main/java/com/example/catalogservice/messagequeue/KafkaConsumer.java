@@ -30,7 +30,7 @@ public class KafkaConsumer {
         Map<Object, Object> map = new HashMap<>();
         ObjectMapper mapper = new ObjectMapper();
         try {
-            map = mapper.readValue(kafkaMessage, new TypeReference<Map<Object, Object>>() {
+            map = mapper.readValue(kafkaMessage, new TypeReference<>() {
             });
         } catch (JsonProcessingException ex) {
             ex.printStackTrace();
@@ -41,7 +41,5 @@ public class KafkaConsumer {
             entity.setStock(entity.getStock() - (Integer) map.get("qty"));
             repository.save(entity);
         }
-
-
     }
 }
