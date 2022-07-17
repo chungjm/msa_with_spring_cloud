@@ -31,8 +31,12 @@ dependencies {
     implementation group: 'org.modelmapper', name: 'modelmapper', version: '2.3.8'
 
     implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+    //kafka
+    implementation 'org.springframework.kafka:spring-kafka'
 
-    implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.28'
+    // mariadb
+    implementation 'org.mariadb.jdbc:mariadb-java-client'
+
     runtimeOnly 'com.h2database:h2:1.3.176'
     compileOnly 'org.projectlombok:lombok'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
