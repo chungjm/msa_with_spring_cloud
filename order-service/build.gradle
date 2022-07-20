@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'com.example'
-version = '0.0.1-SNAPSHOT'
+version = '1.0'
 sourceCompatibility = '11'
 
 configurations {
@@ -27,12 +27,22 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 
     implementation 'org.springframework.boot:spring-boot-starter-validation'
-//	implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation group: 'org.modelmapper', name: 'modelmapper', version: '2.3.8'
 
     implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+
+    // actuator
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+
     //kafka
     implementation 'org.springframework.kafka:spring-kafka'
+
+    // zipkin
+    implementation 'org.springframework.cloud:spring-cloud-starter-zipkin:2.2.8.RELEASE'
+    implementation 'org.springframework.cloud:spring-cloud-starter-sleuth'
+
+    // micrometer
+    implementation 'io.micrometer:micrometer-registry-prometheus'
 
     // mariadb
     implementation 'org.mariadb.jdbc:mariadb-java-client'
